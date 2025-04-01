@@ -13,6 +13,7 @@ This is a patch for Aion to remove the IP restriction and fix various bugs to he
 |`-unlimited-gfx`|Enables the graphics sliders in the graphics options that are grayed out in Aion 4.x when running at a high resolution.|
 |`-disable-xigncode`|Disables xigncode in Aion 5.8|
 |`-fix-39-weapon-switch`|Fixes a bug in 3.9 which prevents weapon switching when being attacked|
+|`-fix-stack-win11`|Fixes a bug in 64bit aion Themida protector on windows 11 24h2|
 
 ## Changelog
 New features for 1.6.2:
