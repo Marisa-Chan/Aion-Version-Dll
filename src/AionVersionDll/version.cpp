@@ -789,13 +789,13 @@ void InstallPatch()
     }
 
     bool installMouseFix = false;
-    if (strstr(GetCommandLineA(), "-win10-mouse-fix-autodetect") > 0) {
+    if (strstr(GetCommandLineA(), "-win10-mouse-fix-autodetect") != NULL) {
         installMouseFix = NeedsWin10MouseFix();
-    } else if (strstr(GetCommandLineA(), "-win10-mouse-fix") > 0) {
+    } else if (strstr(GetCommandLineA(), "-win10-mouse-fix") != NULL) {
         installMouseFix = true;
     } 
     
-    if (!installMouseFix && strstr(GetCommandLineA(), "-windowed-mouse-fix") > 0) {
+    if (!installMouseFix && strstr(GetCommandLineA(), "-windowed-mouse-fix") != NULL) {
         installMouseFix = true;
         g_windowedMousefixOnly = true;
     }
@@ -806,7 +806,7 @@ void InstallPatch()
         DetourAttach(&(PVOID&)real_SetCursor, zzSetCursor);
     }
 
-    if (strstr(GetCommandLineA(), "-unlimited-gfx") > 0) {
+    if (strstr(GetCommandLineA(), "-unlimited-gfx") != NULL) {
         DetourAttach(&(PVOID&)real_ChangeDisplaySettingsA, zzChangeDisplaySettingsA);
     }
 
@@ -854,7 +854,7 @@ void InstallPatch()
 void OnStartup() {
     InstallHighQualityGraphicsFix();
 
-    if (strstr(GetCommandLineA(), "-fix-39-weapon-switch") > 0) {
+    if (strstr(GetCommandLineA(), "-fix-39-weapon-switch") != NULL) {
         InstallWeaponSwitchFix();
     }
 }
